@@ -9,7 +9,7 @@ To check whether the word is composite or not **Dynamic Programming** is used si
 
 ##### Running program
 
-The test data file for the program is under the data directory.The *main.py* is the source file for the program.The program is run by the following method:
+The test data file for the program is under the data directory.The ```main.py``` is the source file for the program.The program is run by the following method:
 
 python main.py file_path
 
@@ -20,7 +20,7 @@ python main.py data/wordsforexample.txt
 
 ##### Output 
 
-The output of the programm for the test file wordsforproblem.txt is:
+The output of the program for the test file ```wordsforproblem.txt``` is:
 
 ```
 Longest Word , Length :  ethylenediaminetetraacetates , 28
