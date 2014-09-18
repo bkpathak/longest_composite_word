@@ -18,7 +18,7 @@ To run the program with sample file:
 python main.py data/wordsforexample.txt
 ```
 
-##### Output 
+#### Output 
 
 The output of the program for the test file ```wordsforproblem.txt``` is:
 
