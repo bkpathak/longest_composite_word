@@ -14,18 +14,18 @@ The test data file for the program is under the data directory.The *main.py* is 
 python main.py file_path
 
 To run the program with sample file:
-'''
+```
 python main.py data/wordsforexample.txt
-'''
+```
 
 ##### Output 
 
 The output of the programm for the test file wordsforproblem.txt is:
 
-'''
+```
 Longest Word , Length :  ethylenediaminetetraacetates , 28
 Second Longest Word:  ethylenediaminetetraacetate
 Total Composite Word Count:  97107
 Elapsed Time(secs):  1.373
-'''
+```
 
