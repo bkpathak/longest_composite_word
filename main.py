@@ -1,5 +1,6 @@
 import time
 
+
 class LongestWord:
 
     '''
@@ -16,9 +17,8 @@ class LongestWord:
         self.memoized_dict = {}
 
     def __word_break(self, word, first_call=False):
-        '''
-        Use dynamic programing to break the words
-        '''
+        # Use dynamic programing to break the word and returns true if
+        # the word is composed of other smaller words.
 
         if word in self.word_dict and not first_call:
             return True
@@ -35,16 +35,17 @@ class LongestWord:
 
     def find_composite_word(self):
         '''
-        Find the composite in the files.
+        Finds each words is composed of other words in file or not.
+        This function calls the helper function __word_break.
         '''
+
         for word in self.word_dict:
             if self.__word_break(word, True):
                 self.__value_update(word)
 
     def __value_update(self, word):
-        '''
-        Update values.
-        '''
+        # Update values accordingly when the words are composite.
+
         self.count += 1
         if len(word) > self.longest_word_len:
             self.longest_word, self.second_longest_word = word, self.longest_word
@@ -56,24 +57,27 @@ class LongestWord:
 
     def read_file(self, file_path):
         '''
-        Read the word from the file line by line and creates dictionary.
-        '''
+        Read the word from the file line by line and creates dictionary.'''
+
         with open(file_path, 'r') as input_file:
             for word in input_file:
                 word = word.rstrip('\n')
                 self.word_dict[word] = None
 
     def display(self):
-        print('Longest Word , Length : ', self.longest_word,',', 
+        '''
+        Shows required output.'''
+
+        print('Longest Word , Length : ', self.longest_word, ',',
                                                         self.longest_word_len)
         print('Second Longest Word: ', self.second_longest_word)
         print('Total Composite Word Count: ', self.count)
 
 
 if __name__ == '__main__':
-    word_class = LongestWord()
+    composite_word = LongestWord()
     start = time.clock()
-    word_class.read_file('data/wordsforproblem.txt')
-    word_class.find_composite_word()
-    word_class.display()
+    composite_word.read_file('data/wordsforproblem.txt')
+    composite_word.find_composite_word()
+    composite_word.display()
     print('Elapsed Time(secs):  {0:.3f}'.format(time.clock() - start))
