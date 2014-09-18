@@ -1,4 +1,5 @@
 import time
+import sys
 
 
 class LongestWord:
@@ -75,9 +76,11 @@ class LongestWord:
 
 
 if __name__ == '__main__':
+
+    filepath = sys.argv[1]
     composite_word = LongestWord()
     start = time.clock()
-    composite_word.read_file('data/wordsforproblem.txt')
+    composite_word.read_file(filepath)
     composite_word.find_composite_word()
     composite_word.display()
     print('Elapsed Time(secs):  {0:.3f}'.format(time.clock() - start))
